@@ -1,7 +1,7 @@
 {
   "name": "heroku-vim",
   "description": "Install Vim and use it in a Heroku dyno",
-  "version": "0.0.1",
+  "version": "0.0.2-0",
   "author": "Jason Hee @jasonheecs",
   "bugs": "https://github.com/jasonheecs/heroku-vim/issues",
   "dependencies": {
