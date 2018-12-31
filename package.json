@@ -42,7 +42,9 @@
   ],
   "homepage": "https://github.com/jasonheecs/heroku-vim#readme",
   "keywords": [
-    "oclif-plugin"
+    "heroku",
+    "vim",
+    "heroku-plugin"
   ],
   "license": "MIT",
   "oclif": {
