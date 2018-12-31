@@ -1,7 +1,7 @@
 {
-  "name": "heroku-vim",
+  "name": "@jasonheecs/heroku-vim",
   "description": "Install Vim and use it in a Heroku dyno",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "author": "Jason Hee @jasonheecs",
   "bugs": "https://github.com/jasonheecs/heroku-vim/issues",
   "dependencies": {
@@ -39,7 +39,7 @@
     "/oclif.manifest.json",
     "/yarn.lock"
   ],
-  "homepage": "https://github.com/jasonheecs/heroku-vim",
+  "homepage": "https://github.com/jasonheecs/heroku-vim#readme",
   "keywords": [
     "oclif-plugin"
   ],
@@ -51,7 +51,10 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "jasonheecs/heroku-vim",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonheecs/heroku-vim.git"
+  },
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
