@@ -1,17 +1,22 @@
 import {expect, test} from '@oclif/test'
 
-describe('hello', () => {
+describe('vim', () => {
   test
-    .stdout()
-    .command(['hello'])
-    .it('runs hello', ctx => {
-      expect(ctx.stdout).to.contain('hello world')
-    })
-
-  test
-    .stdout()
-    .command(['hello', '--name', 'jeff'])
-    .it('runs hello --name jeff', ctx => {
-      expect(ctx.stdout).to.contain('hello jeff')
-    })
+    .nock('https://api.heroku.com', api => api
+      .post('/apps/testapp/dynos')
+      .reply(200, {
+          attach_url: 'https://rendezvous.runtime.heroku.com:5000/123456',
+          name: 'testdyno'
+        }
+      )
+    )
+    .nock('https://api.heroku.com', api => api
+      .persist()
+      .get('/apps/testapp/dynos/testdyno')
+      .reply(404)
+    )
+    .command(['vim', '-a=testapp'])
+    .exit(100)
+    .catch(/404/)
+    .it('makes request to create and attach to heroku dyno');
 })
