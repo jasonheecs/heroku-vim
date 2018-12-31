@@ -1,7 +1,7 @@
 {
   "name": "heroku-vim",
   "description": "Install Vim and use it in a Heroku dyno",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Jason Hee @jasonheecs",
   "bugs": "https://github.com/jasonheecs/heroku-vim/issues",
   "dependencies": {
@@ -58,5 +58,8 @@
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
