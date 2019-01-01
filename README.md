@@ -9,11 +9,18 @@ A Heroku plugin that allows you to use vim in a dyno
 ## Usage
 `heroku vim -a <app-name>`
 
-This will install vim and start a bash session on the dyno
+This will install vim on your dyno and start a bash shell with `vim` installed on your `$PATH`
+
+You can then open any file in the dyno with vim like so:
+ ```bash
+vim /path/to/file
+```
 
 <br/>
 
-You can set a command other than `bash` to be run as well:
+#### Running another command instead of bash 
+
+You can set a command other than `bash` to be run:
 
 `heroku vim -c 'rails console' -a <app-name>`
 
